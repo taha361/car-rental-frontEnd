@@ -1,0 +1,143 @@
+
+   <div class="login-page">
+    <mat-card class="mat-elevation-z12">
+      <mat-card-title style="text-align:center;">SignUp</mat-card-title>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+       
+        <mat-tab label="Sign Up">
+          <mat-card-content>
+            <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="User Name"
+                  required
+                  name="username"
+                  ngModel
+                  #firstname="ngModel">
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="firstname.invalid">
+                  User name is required
+                </mat-error>
+  
+              </mat-form-field>
+
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="First Name"
+                  required
+                  name="firstname"
+                  ngModel
+                  #firstname="ngModel">
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="firstname.invalid">
+                  First name is required
+                </mat-error>
+  
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Last Name"
+                  required
+                  name="lastname"
+                  ngModel
+                  #lastname="ngModel">
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="lastname.invalid">
+                  Last name is required
+                </mat-error>
+  
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="EMAIL"
+                  required
+                  email
+                  name="email"
+                  ngModel
+                  #email="ngModel">
+                <mat-icon matSuffix>perm_identity</mat-icon>
+                <mat-error
+                  *ngIf="email.invalid">
+                  Email is required
+                </mat-error>
+  
+              </mat-form-field>
+             
+              
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  required
+                  name="address"
+                  ngModel
+                  #national="ngModel">
+                <mat-icon matSuffix>language</mat-icon>
+                <mat-error
+                  *ngIf="national.invalid">
+                  Address is required
+                </mat-error>
+  
+              </mat-form-field>
+
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="phone number"
+                  required
+                  name="phone"
+                  ngModel
+                  #phone_number="ngModel">
+                <mat-icon matSuffix>perm_phone_msg</mat-icon>
+                <mat-error
+                  *ngIf="phone_number.invalid">
+                  phone Number is required
+                </mat-error>
+  
+              </mat-form-field>
+
+            
+              
+
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="password"
+                  type="password"
+                  required
+                  minlength="6"
+                  name="password"
+                  ngModel
+                  #cin="ngModel">
+                  <mat-error
+                    *ngIf="cin.errors && cin.errors.required">
+                    Cin is required
+                  </mat-error>
+                  <mat-error
+                    *ngIf="cin.errors && cin.errors.minlength">
+                    Password must be of length 6
+                  </mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
+  
+              </mat-form-field>
+             
+              <button mat-dialog-close
+                mat-raised-button
+                color="primary"
+                class="login-button"
+                type="submit" [disabled]="!formulaire.valid">
+                Sign Up
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>

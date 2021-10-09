@@ -1,0 +1,96 @@
+
+<div class="parallax-content baner-content" id="home">
+        <div class="container">
+            <div class="text-content">
+                <h2><em>Find Great Deals for </em> <span>Car Rental</span> </h2>
+                <p> 
+                    We have great offers for daily, weekly and long term rentals. Find the cheapest prices online, for your future Car Rental in  quick easy steps.
+                    </p><br>
+             
+                    <!-- <button class='btn btn-primary' style="width: 150px; height: 50px; font-size: 20px;" (click)='login()' >Sign-up</button> -->
+                
+            </div>
+        </div>
+    </div>
+
+
+   
+                               <!-- les Occasions -->
+    <section id="about" class="page-section">
+        <div class="bloc-title">
+            <h3>Featured Opportunities  <span>a large selection of used cars </span></h3>
+        </div >
+        
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-3 col-sm-6 col-xs-12" *ngFor='let i of cars'>
+                 
+                 
+                  <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image" 
+          [ngStyle]="{'background-image' : 'url('+mark+')','background-size' : 'cover', 'cursor': 'pointer'}"></div>
+          <mat-card-title>{{i.model}}</mat-card-title>
+          <mat-card-subtitle>{{i.mark}}</mat-card-subtitle>
+        </mat-card-header>
+        <img class="imgSize" mat-card-image  [src]="i.imgPath"
+        alt="Photo of a Shiba Inu"  style="min-height: 150px;">
+        <mat-card-content>
+          <h3><img src="assets/img/outline_location_on_black_36dp.png" alt="location">
+            <a href="#"><mark style="color: rgb(25, 102, 202);">{{i.location}}</mark></a>
+          </h3>
+          <hr>  
+          <div *ngIf="details">
+            <p>
+              {{i.description}}
+            </p> 
+            <hr>
+          </div>
+          <ul class="main-header__item-list ">
+                      <li class="main-header__item"> <img src="assets/img/outline_groups_black_36dp.png" alt="seat"><br><mark><strong>{{i.seats}} seats</strong></mark></li>
+                      <li class="main-header__item"> <img src="assets/img/gearbox.png" alt="gearbox"><br><mark><strong>{{i.gearbox}}</strong></mark></li>
+                      <li class="main-header__item"><img src="assets/img/outline_speed_black_36dp.png" alt="speed"><br><mark><strong>{{i.speed}} Km/h</strong></mark></li>
+          </ul>
+          <hr>
+          <h2><strong style="color: green;">{{i.price}}TND/Week</strong></h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button style="color: blueviolet;"  matBadgeColor="accent" >LIKE</button>
+          <button mat-button style="color: blueviolet;" color="primary" >RENT</button>
+          <button type="button" class="btn btn-outline-warning" >more</button>
+        </mat-card-actions>
+      </mat-card>
+                
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+   
+   
+                                    <!-- Tous les marques-->
+    <div class="brands-list-widget">
+        <div class="container">
+    
+                        <div class="bloc-title">
+                    <h3>Showroom auto  <span>All car brands </span></h3>
+                </div >
+            
+                        <a  *ngFor='let i of marques' [href]="i.name" >
+                    <picture><img [src]="i.imgpath" [alt]="i.name"></picture> </a>       
+    
+        </div>
+        <br><br>
+           <div style="text-align: center ;">
+             <button class='btn btn-primary' style="width: 150px; height: 50px; font-size: 20px;  text-align: center;
+               overflow: hidden; padding-bottom: 20px;" (click)="navBrands()" >all brands </button>
+           </div>
+        
+     </div>
+
+
+    <br><br> <br><br>
+    <app-footer></app-footer>
+    

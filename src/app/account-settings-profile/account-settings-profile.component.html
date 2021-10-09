@@ -1,0 +1,106 @@
+<div class="card bg-secondary shadow" style="margin-top: -40px;">
+    <div class="card-header bg-white border-0">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3 class="mb-0">My account</h3>
+        </div>
+      
+      </div>
+    </div>
+    <div class="card-body">
+      <form #v="ngForm">
+        <div class="pl-lg-4">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group focused">
+                <label class="form-control-label" for="input-username" style="margin-left: -25px;">Change Username</label>
+                <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="" ngModel name="name" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4">
+        <!-- Fav Brands -->
+        <div class="form-group focused">
+            <label class="form-control-label" for="input-username" >Favorites Brands</label>
+          </div>
+        <div class="form-group">
+            <label class="switcher">
+              <input type="checkbox" class="switcher-input" checked>
+              <span class="switcher-indicator">
+                <span class="switcher-yes"></span>
+                <span class="switcher-no"></span>
+              </span>
+              <span class="switcher-label">Mercerdes</span>
+            </label>
+          </div>
+          <div class="form-group">
+              <label class="switcher">
+                <input type="checkbox" class="switcher-input">
+                <span class="switcher-indicator">
+                  <span class="switcher-yes"></span>
+                  <span class="switcher-no"></span>
+                </span>
+                <span class="switcher-label">Volkeswagon</span>
+              </label>
+          </div>
+          <div class="form-group">
+              <label class="switcher">
+                <input type="checkbox" class="switcher-input" checked>
+                <span class="switcher-indicator">
+                  <span class="switcher-yes"></span>
+                  <span class="switcher-no"></span>
+                </span>
+                <span class="switcher-label">Renault</span>
+              </label>
+          </div>
+          <div class="form-group">
+              <label class="switcher">
+                <input type="checkbox" class="switcher-input" checked>
+                <span class="switcher-indicator">
+                  <span class="switcher-yes"></span>
+                  <span class="switcher-no"></span>
+                </span>
+                <span class="switcher-label">Mazda</span>
+              </label>
+          </div>
+          <div class="form-group">
+              <label class="switcher">
+                <input type="checkbox" class="switcher-input">
+                <span class="switcher-indicator">
+                  <span class="switcher-yes"></span>
+                  <span class="switcher-no"></span>
+                </span>
+                <span class="switcher-label">kia</span>
+              </label>
+          </div>
+          <div class="form-group">
+              <label class="switcher">
+                <input type="checkbox" class="switcher-input" checked>
+                <span class="switcher-indicator">
+                  <span class="switcher-yes"></span>
+                  <span class="switcher-no"></span>
+                </span>
+                <span class="switcher-label">Hyundai</span>
+              </label>
+          </div>
+        <div class="form-group">
+                    <label class="switcher">
+                      <input type="checkbox" class="switcher-input">
+                      <span class="switcher-indicator">
+                        <span class="switcher-yes"></span>
+                        <span class="switcher-no"></span>
+                      </span>
+                      <span class="switcher-label">Chevrolet</span>
+                    </label>
+                </div>
+
+        <hr class="my-4">
+        <!-- Description -->
+        <div class="text-right mt-3">
+           <button type="submit" class="btn btn-primary" (click)="onSubmit()" >Save changes</button>&nbsp;
+          
+           </div>    
+      </form>
+    </div>
+  </div>

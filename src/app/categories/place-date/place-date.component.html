@@ -1,0 +1,43 @@
+<div class="container">
+  <br>
+  <br>
+  <br>
+  <br>
+    <div class="row">
+        <div class="col-lg-7">
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>City</mat-label>
+                  <input type="text"
+                         placeholder="Pick one"
+                         aria-label="City"
+                         matInput
+                         [formControl]="myControl"
+                         [matAutocomplete]="auto"
+                         (ngModelChange)="placeChange($event)">
+                  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+        </div>
+        <div class="col-lg-5">
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>rental period</mat-label>
+                <mat-date-range-input
+                  [formGroup]="campaignOne"
+                  [rangePicker]="campaignOnePicker"
+                  [comparisonStart]="campaignTwo.value.start"
+                  [comparisonEnd]="campaignTwo.value.end">
+                  <input matStartDate placeholder="Start date" formControlName="start" (ngModelChange)="logChange($event,'start')">
+                  <input matEndDate placeholder="End date" formControlName="end" (ngModelChange)="logChange($event, 'end')">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+                <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+            </mat-form-field>
+        </div>
+          
+    </div>
+</div>

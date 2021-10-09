@@ -1,0 +1,37 @@
+
+<html lang="en">
+
+<head>
+  <title>Harvest vase</title>
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+</head>
+
+<body>
+    <br>
+<br>
+<br>
+<br>
+  <div class="wrapper">
+    <div class="product-img">
+      <img [src]="imgPath" height="420" width="327">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1>{{model}}</h1>
+        <ul>
+            <li>Start Rental : {{start_rental}}</li>
+            <li>End Rental : {{end_rental}}</li>
+            <li>Duration {{durations}} day(s)</li>
+        </ul>
+        <!-- <p>Harvest Vases are a reinterpretation<br> of peeled fruits and vegetables as<br> functional objects. The surfaces<br> appear to be sliced and pulled aside,<br> allowing room for growth. </p> -->
+      </div>
+      <div class="product-price-btn">
+        <p><span>{{price}}</span>$</p>
+        <button type="button" id="order-btn">buy now</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

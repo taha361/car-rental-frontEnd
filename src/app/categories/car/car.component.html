@@ -1,0 +1,41 @@
+
+<br>
+<br>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image" 
+    [ngStyle]="{'background-image' : 'url('+mark+')','background-size' : 'cover', 'cursor': 'pointer'}"></div>
+    <mat-card-title>{{car.model}}</mat-card-title>
+    <mat-card-subtitle>{{car.society}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="imgSize" mat-card-image  [src]="car.imgPath"
+  alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h3><img src="../../../assets/images/outline_location_on_black_36dp.png" alt="location">
+      <a href="#"><mark style="color: rgb(25, 102, 202);">{{car.city}} , {{car.location}}</mark></a>
+    </h3>
+    <hr>  
+    <div *ngIf="details">
+      <p>
+        {{car.description}}
+      </p> 
+      <hr>
+    </div>
+    <ul class="main-header__item-list ">
+                <li class="main-header__item"> <img src="../../../assets/images/outline_groups_black_36dp.png" alt="seat"><br><mark><strong>{{car.seats}} seats</strong></mark></li>
+                <li class="main-header__item"> <img src="../../../assets/images/gearbox.png" alt="gearbox"><br><mark><strong>{{car.gearbox}}</strong></mark></li>
+                <li class="main-header__item"><img src="../../../assets/images/outline_speed_black_36dp.png" alt="speed"><br><mark><strong>{{car.speed}} Km/h</strong></mark></li>
+    </ul>
+    <hr>
+    <h2><strong style="color: green;">{{car.price}}TND/Week</strong></h2>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button style="color: blueviolet;" [matBadge]="car.likes.nb" matBadgeColor="accent" >LIKE</button>
+    <button mat-button style="color: blueviolet;" color="primary" (click)="onRent()">RENT</button>
+    <button type="button" class="btn btn-outline-warning" (click)="showDetails()">{{details ? 'less' : 'more'}}</button>
+    <button type="button" class="btn btn-outline-danger" (click)="onDelete()" *ngIf="logIn">Delete</button>
+  </mat-card-actions>
+</mat-card>
+<br>
+

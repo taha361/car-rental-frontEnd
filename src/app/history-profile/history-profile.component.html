@@ -1,0 +1,37 @@
+<div class="card bg-secondary shadow" style="margin-top: -40px;">
+    <div class="card-header bg-white border-0">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3 class="mb-0">My account</h3>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped ">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Matricule</th>
+                <th scope="col">Marque</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">durations day(s)</th>
+                <th scope="col">price</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let rent of rents">
+                <td>{{ rent.car.registration }}</td>
+                <td>{{ rent.car.mark }}</td>
+                <td>{{ rent.start_rental }}</td>
+                <td>{{ rent.end_rental}}</td>
+                <td>{{ rent.durations }}</td>
+                <td>{{ rent.price }} $</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+    </div>
+  </div>

@@ -1,0 +1,161 @@
+
+    <div class="container">
+        <div class="formcenter">
+            <form [formGroup]="newCarForm" (ngSubmit)="onSubmit()" >
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input 
+                    id="model"
+                    type="text"
+                    formControlName="model"
+                    class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="registration">car registration</label>
+                    <input 
+                    id="registration"
+                    type="text"
+                    formControlName="registration"
+                    class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="imgPath">Image URL</label>
+                    <input 
+                    id="imgPath"
+                    type="text"
+                    formControlName="imgPath"
+                    class="form-control" #imgPath>
+                </div>
+                <img [src]="imgPath.value" class="img-responsive" 
+                style="max-height: 250px;border-radius: 20px;max-width: 250px;">
+                <br>
+                <br>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <textarea
+                    id="Description"
+                    type="text"
+                    formControlName="description"
+                    class="form-control"
+                    rows="6"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="mark">Car Mark</label>
+                            <select 
+                            id="mark"
+                            formControlName="mark"
+                            class="form-control">
+                                <option *ngFor="let mark of carMarks" [value]="mark">{{mark}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="society">Rental Society</label>
+                            <select 
+                            id="society"
+                            formControlName="society"
+                            class="form-control">
+                                <option *ngFor="let society of rentalSocieties" [value]="society">{{society}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="radio" *ngFor="let box of gearbox, let i = index">
+                    <div class="form-check">
+                        <input class="form-check-input" 
+                        type="radio" [id]="i" [value]="box" 
+                        formControlName="box">
+                        <label class="form-check-label" [for]="i">
+                            {{box}}
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="form-group">
+                            <label for="speed">Max Speed in km/h</label>
+                            <input 
+                            id="speed"
+                            type="number"
+                            formControlName="speed"
+                            class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="radio" *ngFor="let seat of seats, let i = index">
+                    <div class="form-check">
+                        <input class="form-check-input" 
+                        type="radio" [id]="i" [value]="seat" 
+                        formControlName="seat">
+                        <label class="form-check-label" [for]="i">
+                            {{seat}}
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="mark">City </label>
+                            <select 
+                            id="city"
+                            formControlName="city"
+                            class="form-control">
+                                <option *ngFor="let c of city" [value]="c">{{c}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="model">Location</label>
+                    <input 
+                    id="location"
+                    type="text"
+                    formControlName="location"
+                    class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="age">Price of Rent for a week</label>
+                            <input 
+                            id="price"
+                            type="number"
+                            formControlName="price"
+                            class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <span
+                    *ngIf="!newCarForm.valid && newCarForm.touched"
+                    class="help-block" style="color: red;">Please enter valid data!
+                </span>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <button type="submit" class="btn btn-outline-success"
+                         [disabled]="!newCarForm.valid">Save</button>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="button" class="btn btn-outline-danger">Cancel</button>
+                    </div>
+                </div>
+                <br>
+            </form>
+    
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>

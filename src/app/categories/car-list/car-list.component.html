@@ -1,0 +1,13 @@
+<div class="row">
+        <div class="col-lg-4"  *ngFor="let carItem of carsTable,let i = index">
+            <app-car [car]="carItem" [index]="i"></app-car>
+        </div>
+       
+</div>
+<div class="pagination-wrapper">
+    <div class="pagination">
+      <a class="prev page-numbers" href="javascript:;" (click)="getprev()">prev</a>
+  
+      <a class="next page-numbers" href="javascript:;" (click)="getNext()" >next</a>
+    </div>
+  </div>

@@ -1,0 +1,41 @@
+label
+{
+    font-weight: bold;
+}
+
+
+.container {
+    margin-top: 100px;
+    position: relative;
+  }
+
+.formcenter
+{
+  width: 50%;
+  margin: auto;
+}
+  
+  input.ng-invalid.ng-touched,select.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+form
+{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/1-0-home/page-properties/rolls-royce-motor-cars-models-share-image.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

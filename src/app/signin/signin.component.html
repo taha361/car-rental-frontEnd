@@ -1,0 +1,27 @@
+
+<div class="center-content">
+    <mat-card class="example-card">
+
+        <mat-card-header>
+            <mat-card-title>Login In</mat-card-title>
+            </mat-card-header>
+ <form (ngSubmit)="login(form)" #form="ngForm">
+  <mat-tab label="Login">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Email" value="" [(ngModel)]="email" name="email">
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Password" [(ngModel)]="password" name="password">
+      <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+    <button mat-button  mat-dialog-close type="submit" color="primary" >Login</button>
+   
+    <button mat-button color="white" type="button"  (click)='resetPass()' >Reset-Password</button>
+  </mat-tab>
+ </form>
+    </mat-card>
+</div>
